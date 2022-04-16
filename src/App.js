@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react"
+import { Route, Routes } from "react-router-dom"
+import Header from "./pages/Header/Header"
+import Home from "./pages/Home/Home"
+import Login from "./pages/LoginAndRegister/Login/Login"
+import Register from "./pages/LoginAndRegister/Register/Register"
+import RequireAuth from "./pages/RequireAuth/RequireAuth"
+import Room from "./pages/Room/Room"
+import NotFound from "./pages/SharedPages/NotFound/NotFound"
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+			<Header />
+			<Routes>
+				<Route path="/" element={<Home></Home>}></Route>
+				<Route
+					path="/room"
+					element={
+						<RequireAuth>
+							<Room></Room>
+						</RequireAuth>
+					}
+				></Route>
+				<Route path="/login" element={<Login />} />
+				<Route path="/register" element={<Register />} />
+				<Route path="/*" element={<NotFound />} />
+			</Routes>
+		</div>
+	)
 }
 
-export default App;
+export default App
