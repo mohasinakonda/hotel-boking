@@ -7,7 +7,7 @@ import Singleroom from "../RoomService/Singleroom"
 
 const Services = () => {
 	return (
-		<div>
+		<div className="container">
 			<h2>our Services</h2>
 			<nav>
 				<NavLink to="single">single room</NavLink>

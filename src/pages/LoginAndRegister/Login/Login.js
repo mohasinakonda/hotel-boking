@@ -24,9 +24,7 @@ const Login = () => {
 	const submitHandler = (event) => {
 		event.preventDefault()
 		if (user) {
-			signInWithEmailAndPassword(auth, email, password).then((data) => {
-				const user = data.user
-			})
+			signInWithEmailAndPassword(auth, email, password)
 		}
 	}
 	return (

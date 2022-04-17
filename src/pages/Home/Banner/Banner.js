@@ -1,26 +1,21 @@
 import React from "react"
 import { Carousel } from "react-bootstrap"
+import badimg1 from "../../../assets/images/badroom1.jpg"
+import badimg2 from "../../../assets/images/badroom2.jpg"
+import badimg3 from "../../../assets/images/badroom3.png"
 
 const Banner = () => {
 	return (
-		<Carousel>
+		<Carousel className="m-5">
 			<Carousel.Item>
-				<img
-					className="d-block w-100"
-					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaIdrOkRyAXOcgBsppOw9pm3BqxSddauu56niRp8cUHOVglXLRjPcEH_CSeodP_VVchdM&usqp=CAU"
-					alt="First slide"
-				/>
+				<img className="d-block w-100 h-50" src={badimg1} alt="First slide" />
 				<Carousel.Caption>
 					<h3>First slide label</h3>
 					<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
 				</Carousel.Caption>
 			</Carousel.Item>
 			<Carousel.Item>
-				<img
-					className="d-block w-100"
-					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaIdrOkRyAXOcgBsppOw9pm3BqxSddauu56niRp8cUHOVglXLRjPcEH_CSeodP_VVchdM&usqp=CAU"
-					alt="Second slide"
-				/>
+				<img className="d-block w-100 h-50 " src={badimg2} alt="Second slide" />
 
 				<Carousel.Caption>
 					<h3>Second slide label</h3>
@@ -28,11 +23,7 @@ const Banner = () => {
 				</Carousel.Caption>
 			</Carousel.Item>
 			<Carousel.Item>
-				<img
-					className="d-block w-100"
-					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaIdrOkRyAXOcgBsppOw9pm3BqxSddauu56niRp8cUHOVglXLRjPcEH_CSeodP_VVchdM&usqp=CAU"
-					alt="Third slide"
-				/>
+				<img className="d-block w-100 h-50" src={badimg3} alt="Third slide" />
 
 				<Carousel.Caption>
 					<h3>Third slide label</h3>
