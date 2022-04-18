@@ -26,7 +26,7 @@ const CheckoutDetails = () => {
 	return (
 		<div className="w-25 mx-auto">
 			<h2>please confirm Your booking</h2>
-			<Form>
+			<Form onSubmit={handleBooking}>
 				<Form.Group className="mb-3" controlId="formBasicEmail">
 					<Form.Label>Enter name</Form.Label>
 					<Form.Control required type="text" placeholder="Enter name" />

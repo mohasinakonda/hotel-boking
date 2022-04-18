@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, Navigate } from "react-router-dom"
+import { Link, Navigate, useNavigate } from "react-router-dom"
 import {
 	useAuthState,
 	useCreateUserWithEmailAndPassword,
@@ -13,7 +13,8 @@ const Login = () => {
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
 	const [confirmPassword, setConfirmPassword] = useState("")
-	const [user, loading] = useAuthState(auth)
+	const [user, loading, error] = useAuthState(auth)
+	const navigate = useNavigate()
 
 	const [createUserWithEmailAndPassword] =
 		useCreateUserWithEmailAndPassword(auth)
@@ -26,7 +27,11 @@ const Login = () => {
 	const confirmPasswordHandler = (e) => {
 		setConfirmPassword(e.target.value)
 	}
-
+	let handleError
+	if (error) {
+		handleError = error.message
+		console.log(error.message)
+	}
 	if (user) {
 		return <Navigate to="/"></Navigate>
 	}
@@ -38,6 +43,7 @@ const Login = () => {
 				const userInfo = result?.user
 			})
 		}
+		navigate("/login")
 	}
 	return (
 		<div className="w-25  mx-auto">
@@ -68,13 +74,13 @@ const Login = () => {
 						placeholder="Password"
 					/>
 				</Form.Group>
-				<Form.Group className="mb-3" controlId="formBasicCheckbox">
-					<Form.Check type="checkbox" label="Check me out" />
-				</Form.Group>
+
 				<Button className="w-100" variant="warning" type="submit">
 					Submit
 				</Button>
 			</Form>
+			<p>{handleError}</p>
+
 			<LoginWithGoogle></LoginWithGoogle>
 		</div>
 	)

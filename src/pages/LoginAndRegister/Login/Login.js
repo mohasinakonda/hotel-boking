@@ -31,6 +31,10 @@ const Login = () => {
 	if (user) {
 		navigate(from, { replace: true })
 	}
+	let handleError
+	if (hookError) {
+		handleError = hookError.message
+	}
 
 	const submitHandler = (event) => {
 		event.preventDefault()
@@ -69,13 +73,12 @@ const Login = () => {
 						placeholder="Password"
 					/>
 				</Form.Group>
-				<Form.Group className="mb-3" controlId="formBasicCheckbox">
-					<Form.Check type="checkbox" label="show password" />
-				</Form.Group>
+
 				<Button className="w-100" variant="warning" type="submit">
 					Submit
 				</Button>
 			</Form>
+			<p>{hookError && handleError}</p>
 			<p className="py-3">
 				Need have an account?
 				<Link
