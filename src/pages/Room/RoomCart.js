@@ -11,7 +11,7 @@ const RoomCart = ({ room }) => {
 		navigate(`checkout/${id}`)
 	}
 	return (
-		<Card className="col-4">
+		<Card className="col-lg-4 col-md-6 ">
 			<Card.Img variant="top" className="h-100 shadow-lg" src={img} />
 			<Card.Body>
 				<Card.Title>{name}</Card.Title>

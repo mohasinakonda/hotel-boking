@@ -10,26 +10,24 @@ const Banner = () => {
 			<Carousel.Item>
 				<img className="d-block w-100 h-50" src={badimg1} alt="First slide" />
 				<Carousel.Caption>
-					<h3>First slide label</h3>
-					<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+					<h3>single room</h3>
+					<p>single room for create mingle</p>
 				</Carousel.Caption>
 			</Carousel.Item>
 			<Carousel.Item>
 				<img className="d-block w-100 h-50 " src={badimg2} alt="Second slide" />
 
 				<Carousel.Caption>
-					<h3>Second slide label</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					<h3>Select your Rooms </h3>
+					<p>this is more convanint for your family and your comfort zone</p>
 				</Carousel.Caption>
 			</Carousel.Item>
 			<Carousel.Item>
 				<img className="d-block w-100 h-50" src={badimg3} alt="Third slide" />
 
 				<Carousel.Caption>
-					<h3>Third slide label</h3>
-					<p>
-						Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-					</p>
+					<h3>Doot Room</h3>
+					<p>Love it for your family ,just awesome</p>
 				</Carousel.Caption>
 			</Carousel.Item>
 		</Carousel>

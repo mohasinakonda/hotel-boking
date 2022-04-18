@@ -15,6 +15,7 @@ import Singleroom from "./pages/Home/RoomService/Singleroom"
 import CheckOut from "./pages/SharedPages/CheckOut/CheckOut"
 import CheckoutDetails from "./pages/SharedPages/CheckoutDetails/CheckoutDetials"
 import Blogs from "./pages/Blogs/Blogs"
+import AboutMe from "./pages/AboutMe/AboutMe"
 function App() {
 	return (
 		<div>
@@ -39,6 +40,7 @@ function App() {
 				></Route>
 				<Route path="/login" element={<Login />} />
 				<Route path="/blogs" element={<Blogs />} />
+				<Route path="/aboutme" element={<AboutMe />} />
 				<Route path="/register" element={<Register />} />
 				<Route path="checkout/:roomId" element={<CheckoutDetails />}></Route>
 				<Route path="/*" element={<NotFound />} />

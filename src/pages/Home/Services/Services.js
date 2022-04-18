@@ -9,11 +9,7 @@ const Services = () => {
 	return (
 		<div className="container">
 			<h2>our Services</h2>
-			<nav>
-				<NavLink to="single">single room</NavLink>
-				<NavLink to="family">family room</NavLink>
-				<NavLink to="couple">couple room</NavLink>
-			</nav>
+
 			<Room></Room>
 			{/* <Outlet> */}
 		</div>
