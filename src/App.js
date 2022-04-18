@@ -12,6 +12,7 @@ import NotFound from "./pages/SharedPages/NotFound/NotFound"
 import Familyroom from "./pages/Home/RoomService/Familyroom"
 import CoupleRoom from "./pages/Home/RoomService/CoupleRoom"
 import Singleroom from "./pages/Home/RoomService/Singleroom"
+import CheckOut from "./pages/SharedPages/CheckOut/CheckOut"
 function App() {
 	return (
 		<div>
@@ -19,10 +20,10 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home></Home>}></Route>
 				<Route
-					path="/room"
+					path="checkout"
 					element={
 						<RequireAuth>
-							<Room></Room>
+							<CheckOut></CheckOut>
 						</RequireAuth>
 					}
 				></Route>
