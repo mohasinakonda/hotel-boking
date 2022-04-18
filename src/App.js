@@ -14,6 +14,7 @@ import CoupleRoom from "./pages/Home/RoomService/CoupleRoom"
 import Singleroom from "./pages/Home/RoomService/Singleroom"
 import CheckOut from "./pages/SharedPages/CheckOut/CheckOut"
 import CheckoutDetails from "./pages/SharedPages/CheckoutDetails/CheckoutDetials"
+import Blogs from "./pages/Blogs/Blogs"
 function App() {
 	return (
 		<div>
@@ -36,12 +37,8 @@ function App() {
 						</RequireAuth>
 					}
 				></Route>
-				<Route path="services" element={<Services></Services>}>
-					<Route path="family" element={<Familyroom />}></Route>
-					<Route path="couple" element={<CoupleRoom />}></Route>
-					<Route path="single" element={<Singleroom />}></Route>
-				</Route>
 				<Route path="/login" element={<Login />} />
+				<Route path="/blogs" element={<Blogs />} />
 				<Route path="/register" element={<Register />} />
 				<Route path="checkout/:roomId" element={<CheckoutDetails />}></Route>
 				<Route path="/*" element={<NotFound />} />

@@ -6,10 +6,12 @@ import {
 	useSendPasswordResetEmail,
 	useUpdatePassword,
 } from "react-firebase-hooks/auth"
+import { ToastContainer, toast } from "react-toastify"
+
+import "react-toastify/dist/ReactToastify.css"
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom"
 import LoginWithGoogle from "../LoginWithGoogle/LoginWithGoogle"
 import auth from "../../../firebase.config"
-import { toast } from "react-toastify"
 import Spiner from "../../SharedPages/Spiner/Spinner"
 const Login = () => {
 	const [email, setEmail] = useState("")
@@ -36,6 +38,7 @@ const Login = () => {
 		signInWithEmailAndPassword(auth, email, password).then((result) => {
 			const user = result.user
 		})
+		toast("login successful")
 	}
 
 	if (loading || sending) {
@@ -92,6 +95,7 @@ const Login = () => {
 				</button>
 			</p>
 			<LoginWithGoogle></LoginWithGoogle>
+			<ToastContainer />
 		</div>
 	)
 }

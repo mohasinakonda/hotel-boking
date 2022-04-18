@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react"
 import { Button, Form } from "react-bootstrap"
-import { useParams } from "react-router-dom"
+import { Navigate, useNavigate, useParams } from "react-router-dom"
 import useRooms from "../../../utilitise/hooks/useRooms"
+import { ToastContainer, toast } from "react-toastify"
+
+import "react-toastify/dist/ReactToastify.css"
 
 const CheckoutDetails = () => {
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
 	const [rooms] = useRooms()
+	const navigate = useNavigate()
 
 	const { roomId } = useParams()
 	const emailHandler = (e) => {
@@ -15,7 +19,10 @@ const CheckoutDetails = () => {
 	const passwordHandler = (e) => {
 		setPassword(e.target.value)
 	}
-
+	const handleBooking = () => {
+		toast("your room is successfully booked!!")
+		navigate("/")
+	}
 	return (
 		<div className="w-25 mx-auto">
 			<h2>please confirm Your booking</h2>
@@ -42,6 +49,7 @@ const CheckoutDetails = () => {
 					Submit
 				</Button>
 			</Form>
+			<ToastContainer />
 		</div>
 	)
 }
