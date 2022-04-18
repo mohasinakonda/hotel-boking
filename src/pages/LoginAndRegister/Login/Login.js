@@ -14,17 +14,11 @@ import Spiner from "../../SharedPages/Spiner/Spinner"
 const Login = () => {
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
-	const [user, loading] = useAuthState(auth, {})
+	const [user, loading, hookError] = useAuthState(auth)
 	const location = useLocation()
-	const [sendPasswordResetEmail, sending, error] =
-		useSendPasswordResetEmail(auth)
+	const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth)
 	const navigate = useNavigate()
 	const from = location.state?.from?.pathname || "/"
-
-	// const [error, setError] = useState({
-	// 	email: "",
-	// 	password: "",
-	// })
 
 	const emailHandler = (e) => {
 		setEmail(e.target.value)
