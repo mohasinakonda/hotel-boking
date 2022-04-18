@@ -78,7 +78,7 @@ const Login = () => {
 					Submit
 				</Button>
 			</Form>
-			<p>{hookError && handleError}</p>
+			<p>{handleError}</p>
 			<p className="py-3">
 				Need have an account?
 				<Link

@@ -13,10 +13,10 @@ const Login = () => {
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
 	const [confirmPassword, setConfirmPassword] = useState("")
-	const [user, loading, error] = useAuthState(auth)
+	const [user] = useAuthState(auth)
 	const navigate = useNavigate()
 
-	const [createUserWithEmailAndPassword] =
+	const [createUserWithEmailAndPassword, userHook, loading, error] =
 		useCreateUserWithEmailAndPassword(auth)
 	const emailHandler = (e) => {
 		setEmail(e.target.value)
@@ -30,7 +30,6 @@ const Login = () => {
 	let handleError
 	if (error) {
 		handleError = error.message
-		console.log(error.message)
 	}
 	if (user) {
 		return <Navigate to="/"></Navigate>
