@@ -27,6 +27,14 @@ function App() {
 							<CheckOut></CheckOut>
 						</RequireAuth>
 					}
+				></Route>{" "}
+				<Route
+					path="checkout/:roomId"
+					element={
+						<RequireAuth>
+							<CheckoutDetails></CheckoutDetails>
+						</RequireAuth>
+					}
 				></Route>
 				<Route path="services" element={<Services></Services>}>
 					<Route path="family" element={<Familyroom />}></Route>

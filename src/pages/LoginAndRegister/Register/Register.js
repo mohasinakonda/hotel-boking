@@ -14,10 +14,6 @@ const Login = () => {
 	const [password, setPassword] = useState("")
 	const [confirmPassword, setConfirmPassword] = useState("")
 	const [user, loading] = useAuthState(auth)
-	const [error, setError] = useState({
-		email: "",
-		password: "",
-	})
 
 	const [createUserWithEmailAndPassword] =
 		useCreateUserWithEmailAndPassword(auth)
