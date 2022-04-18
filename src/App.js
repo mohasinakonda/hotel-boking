@@ -13,6 +13,7 @@ import Familyroom from "./pages/Home/RoomService/Familyroom"
 import CoupleRoom from "./pages/Home/RoomService/CoupleRoom"
 import Singleroom from "./pages/Home/RoomService/Singleroom"
 import CheckOut from "./pages/SharedPages/CheckOut/CheckOut"
+import CheckoutDetails from "./pages/SharedPages/CheckoutDetails/CheckoutDetials"
 function App() {
 	return (
 		<div>
@@ -34,6 +35,7 @@ function App() {
 				</Route>
 				<Route path="/login" element={<Login />} />
 				<Route path="/register" element={<Register />} />
+				<Route path="checkout/:roomId" element={<CheckoutDetails />}></Route>
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
 		</div>

@@ -40,7 +40,11 @@ const Header = () => {
 							Login
 						</Nav.Link>
 					) : (
-						<button onClick={handleSignOut} as={Link}>
+						<button
+							className="border-0 rounded bg-warning"
+							onClick={handleSignOut}
+							as={Link}
+						>
 							LogOut
 						</button>
 					)}
